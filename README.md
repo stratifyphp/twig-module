@@ -1,6 +1,6 @@
 # Twig module for Stratify
 
-Pre-configure Twig to work with Stratify and Puli so that you can use it straightaway.
+Pre-configuration for Twig to work with Stratify and Puli.
 
 ## Installation
 
@@ -31,15 +31,15 @@ The following configuration options can be customized if needed:
 - `twig.options`: [Twig options](http://twig.sensiolabs.org/doc/api.html#environment-options)
 
     ```php
-        `twig.options` => [
-            'strict_variables' => true,
-        ],
+    `twig.options` => [
+        'strict_variables' => true,
+    ],
     ```
 - `twig.extensions`: array of [Twig extensions](http://twig.sensiolabs.org/doc/api.html#using-extensions)
 
     ```php
-        `twig.extensions` => [
-            get(Twig_Extension_Profiler::class),
-            get(My\Custom\TwigExtension::class),
-        ],
+    `twig.extensions` => [
+        get(Twig_Extension_Profiler::class),
+        get(My\Custom\TwigExtension::class),
+    ],
     ```
