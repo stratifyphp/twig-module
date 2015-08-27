@@ -31,19 +31,15 @@ The following configuration options can be customized if needed:
 - `twig.options`: [Twig options](http://twig.sensiolabs.org/doc/api.html#environment-options)
 
     ```php
-    return [
         `twig.options` => [
             'strict_variables' => true,
         ],
-    ]
     ```
 - `twig.extensions`: array of [Twig extensions](http://twig.sensiolabs.org/doc/api.html#using-extensions)
 
     ```php
-    return [
         `twig.extensions` => [
             get(Twig_Extension_Profiler::class),
             get(My\Custom\TwigExtension::class),
         ],
-    ]
     ```
