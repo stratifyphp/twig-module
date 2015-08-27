@@ -14,7 +14,7 @@ Then enable the `twig` module in your Stratify application.
 
 The `Twig_Environment` instance is now injectable wherever dependency injection is available.
 
-Templates are loaded through Puli, so you need to use Puli paths to render a template (or extend another one).
+Templates are loaded through Puli, so you need to use [Puli paths](http://docs.puli.io/en/latest/glossary.html#glossary-puli-path) to render a template (or extend another one).
 
 Example of a Stratify controller:
 
