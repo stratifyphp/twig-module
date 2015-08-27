@@ -38,8 +38,8 @@ The following configuration options can be customized if needed:
 - `twig.extensions`: array of [Twig extensions](http://twig.sensiolabs.org/doc/api.html#using-extensions)
 
     ```php
-    `twig.extensions` => [
+    `twig.extensions` => add([
         get(Twig_Extension_Profiler::class),
         get(My\Custom\TwigExtension::class),
-    ],
+    ]),
     ```
