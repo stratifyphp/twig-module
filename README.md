@@ -43,3 +43,20 @@ The following configuration options can be customized if needed:
         get(My\Custom\TwigExtension::class),
     ]),
     ```
+
+Recommended options for **production**:
+
+```php
+'twig.options' => [
+    'cache' => /* cache directory */,
+],
+```
+
+Recommended options for **development**:
+
+```php
+'twig.options' => [
+    'cache' => false,
+    'strict_variables' => false,
+],
+```
