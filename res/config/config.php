@@ -21,6 +21,7 @@ return [
      * Register Twig extensions through this array.
      */
     'twig.extensions' => add([
+        get(Twig_Extension_Debug::class),
         get(PuliExtension::class),
         get(RouterExtension::class),
     ]),
