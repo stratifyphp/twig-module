@@ -35,6 +35,14 @@ The following configuration options can be customized if needed:
         'strict_variables' => true,
     ]),
     ```
+- `twig.globals`: [Global variables available in templates](http://twig.sensiolabs.org/doc/advanced.html#id1)
+
+    ```php
+    `twig.globals` => add([
+        'appName' => 'My super project',
+        'debug' => get('debug'), // container parameters can be injected too
+    ]),
+    ```
 - `twig.extensions`: array of [Twig extensions](http://twig.sensiolabs.org/doc/api.html#using-extensions)
 
     ```php

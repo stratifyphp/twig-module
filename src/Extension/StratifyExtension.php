@@ -5,6 +5,7 @@ namespace Stratify\TwigModule\Extension;
 use Interop\Container\ContainerInterface;
 use Stratify\Router\UrlGenerator;
 use Twig_Extension;
+use Twig_Extension_GlobalsInterface;
 use Twig_SimpleFunction;
 
 /**
@@ -12,7 +13,7 @@ use Twig_SimpleFunction;
  *
  * @author Matthieu Napoli <matthieu@mnapoli.fr>
  */
-class StratifyExtension extends Twig_Extension
+class StratifyExtension extends Twig_Extension implements Twig_Extension_GlobalsInterface
 {
     /**
      * @var ContainerInterface
@@ -22,6 +23,11 @@ class StratifyExtension extends Twig_Extension
     public function __construct(ContainerInterface $container)
     {
         $this->container = $container;
+    }
+
+    public function getGlobals()
+    {
+        return $this->container->get('twig.globals');
     }
 
     public function getFunctions()

@@ -13,9 +13,23 @@ return [
 
     /**
      * Twig options
+     *
      * @see http://twig.sensiolabs.org/doc/api.html#environment-options
      */
     'twig.options' => [],
+
+    /**
+     * Global variables available in Twig templates
+     *
+     * Remember PHP-DI helpers can be used in this array to inject parameters in Twig templates, for example:
+     *
+     *     'twig.globals' => [
+     *         'debug' => get('debug'),
+     *     ],
+     *
+     * @see http://twig.sensiolabs.org/doc/advanced.html#id1
+     */
+    'twig.globals' => [],
 
     /**
      * Register Twig extensions through this array.
