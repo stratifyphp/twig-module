@@ -7,11 +7,11 @@ use Twig_Extension;
 use Twig_SimpleFunction;
 
 /**
- * Twig extension to add router-specific functions to Twig.
+ * Twig extension that registers Stratify-specific functions and helpers.
  *
  * @author Matthieu Napoli <matthieu@mnapoli.fr>
  */
-class RouterExtension extends Twig_Extension
+class StratifyExtension extends Twig_Extension
 {
     /**
      * @var UrlGenerator
@@ -37,6 +37,6 @@ class RouterExtension extends Twig_Extension
 
     public function getName()
     {
-        return 'stratify_router';
+        return 'stratify';
     }
 }

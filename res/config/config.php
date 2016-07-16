@@ -4,7 +4,7 @@ use Puli\Repository\Api\ResourceRepository;
 use Puli\TwigExtension\PuliExtension;
 use Puli\TwigExtension\PuliTemplateLoader;
 use Puli\UrlGenerator\Api\UrlGenerator;
-use Stratify\TwigModule\Extension\RouterExtension;
+use Stratify\TwigModule\Extension\StratifyExtension;
 use function DI\add;
 use function DI\get;
 use function DI\object;
@@ -23,7 +23,7 @@ return [
     'twig.extensions' => add([
         get(Twig_Extension_Debug::class),
         get(PuliExtension::class),
-        get(RouterExtension::class),
+        get(StratifyExtension::class),
     ]),
 
     Twig_Environment::class => object()
