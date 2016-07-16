@@ -2,6 +2,7 @@
 
 namespace Stratify\TwigModule\Extension;
 
+use Interop\Container\ContainerInterface;
 use Stratify\Router\UrlGenerator;
 use Twig_Extension;
 use Twig_SimpleFunction;
@@ -14,13 +15,13 @@ use Twig_SimpleFunction;
 class StratifyExtension extends Twig_Extension
 {
     /**
-     * @var UrlGenerator
+     * @var ContainerInterface
      */
-    private $urlGenerator;
+    private $container;
 
-    public function __construct(UrlGenerator $urlGenerator)
+    public function __construct(ContainerInterface $container)
     {
-        $this->urlGenerator = $urlGenerator;
+        $this->container = $container;
     }
 
     public function getFunctions()
@@ -32,7 +33,8 @@ class StratifyExtension extends Twig_Extension
 
     public function generatePath(string $name, array $parameters = []) : string
     {
-        return $this->urlGenerator->generate($name, $parameters);
+        $urlGenerator = $this->container->get(UrlGenerator::class);
+        return $urlGenerator->generate($name, $parameters);
     }
 
     public function getName()
