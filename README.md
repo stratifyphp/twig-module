@@ -66,6 +66,6 @@ Recommended options for **development**:
 'twig.options' => [
     'debug' => true,
     'cache' => false,
-    'strict_variables' => false,
+    'strict_variables' => true,
 ],
 ```
