@@ -1,6 +1,6 @@
 # Twig module for Stratify
 
-Pre-configuration for Twig to work with Stratify and Puli.
+Pre-configuration for Twig to work with Stratify.
 
 ## Installation
 
@@ -8,19 +8,17 @@ Pre-configuration for Twig to work with Stratify and Puli.
 composer require stratify/twig-module
 ```
 
-Then enable the `twig` module in your Stratify application.
+Then enable the `stratify/twig-module` module in your Stratify application.
 
 ## Usage
 
 The `Twig_Environment` instance is now injectable wherever dependency injection is available.
 
-Templates are loaded through Puli, so you need to use [Puli paths](http://docs.puli.io/en/latest/glossary.html#glossary-puli-path) to render a template (or extend another one).
-
 Example of a Stratify controller:
 
 ```php
 function (Twig_Environment $twig) {
-    return $twig->render('/app/views/home.twig');
+    return $twig->render('home.twig');
 }
 ```
 
@@ -28,6 +26,25 @@ function (Twig_Environment $twig) {
 
 The following configuration options can be customized if needed:
 
+- `twig.paths`: Paths containing templates to register
+
+    ```php
+    `twig.paths` => add([
+        __DIR__.'/../views',
+    ]),
+    ```
+    
+    Templates can then be rendered as `foo.twig`.
+    
+    Templates can also be namespaced, which can be useful for reusable modules:
+    
+    ```php
+    `twig.paths` => add([
+        'blog' => __DIR__.'/../views',
+    ]),
+    ```
+    
+    Templates can then be rendered as `@blog/foo.twig`.
 - `twig.options`: [Twig options](http://twig.sensiolabs.org/doc/api.html#environment-options)
 
     ```php
