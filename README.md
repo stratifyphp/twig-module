@@ -29,7 +29,7 @@ The following configuration options can be customized if needed:
 - `twig.paths`: Paths containing templates to register
 
     ```php
-    `twig.paths` => add([
+    'twig.paths' => add([
         __DIR__.'/../views',
     ]),
     ```
@@ -39,7 +39,7 @@ The following configuration options can be customized if needed:
     Templates can also be namespaced, which can be useful for reusable modules:
     
     ```php
-    `twig.paths` => add([
+    'twig.paths' => add([
         'blog' => __DIR__.'/../views',
     ]),
     ```
@@ -48,14 +48,14 @@ The following configuration options can be customized if needed:
 - `twig.options`: [Twig options](http://twig.sensiolabs.org/doc/api.html#environment-options)
 
     ```php
-    `twig.options` => add([
+    'twig.options' => add([
         'strict_variables' => true,
     ]),
     ```
 - `twig.globals`: [Global variables available in templates](http://twig.sensiolabs.org/doc/advanced.html#id1)
 
     ```php
-    `twig.globals` => add([
+    'twig.globals' => add([
         'appName' => 'My super project',
         'debug' => get('debug'), // container parameters can be injected too
     ]),
@@ -63,7 +63,7 @@ The following configuration options can be customized if needed:
 - `twig.extensions`: array of [Twig extensions](http://twig.sensiolabs.org/doc/api.html#using-extensions)
 
     ```php
-    `twig.extensions` => add([
+    'twig.extensions' => add([
         get(Twig_Extension_Profiler::class),
         get(My\Custom\TwigExtension::class),
     ]),
