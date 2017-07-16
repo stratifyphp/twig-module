@@ -1,13 +1,11 @@
 <?php
 declare(strict_types = 1);
 
-namespace Stratify\TwigModule\Test\Extension;
+namespace Stratify\TwigModule\Test;
 
 use function DI\add;
-use DI\Container;
 use DI\ContainerBuilder;
 use function DI\get;
-use Interop\Container\ContainerInterface;
 use PHPUnit\Framework\TestCase;
 
 class ModuleTest extends TestCase
@@ -63,9 +61,6 @@ class ModuleTest extends TestCase
     {
         $builder = new ContainerBuilder;
         $builder->addDefinitions(__DIR__ . '/../res/config/config.php');
-        $builder->addDefinitions([
-            ContainerInterface::class => get(Container::class),
-        ]);
         $builder->addDefinitions($definitions);
         return $builder->build()->get(\Twig_Environment::class);
     }

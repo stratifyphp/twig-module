@@ -2,7 +2,7 @@
 
 namespace Stratify\TwigModule\Extension;
 
-use Interop\Container\ContainerInterface;
+use Psr\Container\ContainerInterface;
 use Stratify\Router\UrlGenerator;
 use Twig_Extension;
 use Twig_Extension_GlobalsInterface;

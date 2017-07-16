@@ -4,7 +4,7 @@ use Psr\Container\ContainerInterface;
 use Stratify\TwigModule\Extension\StratifyExtension;
 use function DI\add;
 use function DI\get;
-use function DI\object;
+use function DI\create;
 
 return [
 
@@ -54,7 +54,7 @@ return [
         get(StratifyExtension::class),
     ]),
 
-    Twig_Environment::class => object()
+    Twig_Environment::class => create()
         ->constructor(get(Twig_LoaderInterface::class), get('twig.options'))
         ->method('setExtensions', get('twig.extensions')),
 
